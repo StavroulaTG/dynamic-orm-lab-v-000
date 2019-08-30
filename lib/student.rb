@@ -4,8 +4,11 @@ require 'interactive_record.rb'
 
 class Student < InteractiveRecord
 
-  def self.table_name 
+  def self.table_name
     self.to_s.downcase.pluralize
   end
+
+  def column_names
+    sql = "PRAGMA table_info('#{table_name}')"
 
 end
