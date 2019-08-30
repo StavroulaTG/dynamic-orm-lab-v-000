@@ -8,6 +8,7 @@ class Student < InteractiveRecord
     options.each do |property, value|
       self.send("#{property}=", value)
     end
+  end
 
   def self.table_name
     self.to_s.downcase.pluralize
