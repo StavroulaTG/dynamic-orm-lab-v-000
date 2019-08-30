@@ -62,7 +62,9 @@ class Student < InteractiveRecord
   end
 
   def self.find_by(attribute)
-    
+    column_name = attribute.keys[0].to_sym
+    value_name = attribute.values[0]
+
     sql = <<-SQL
     SELECT * FROM #{table_name}
     WHERE #{column_name} = ?
